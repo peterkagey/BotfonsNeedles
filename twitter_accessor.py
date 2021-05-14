@@ -8,5 +8,5 @@ class TwitterAccessor:
     self.api = tweepy.API(auth)
 
   def read_last_tweet(self):
-    timeline = self.api.home_timeline(count=1, exclude_replies=True, tweet_mode='extended')
+    timeline = self.api.user_timeline(count=1, exclude_replies=True, tweet_mode='extended')
     return timeline[0].full_text
